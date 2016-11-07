@@ -11,7 +11,7 @@ source:
     - build.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -20,7 +20,7 @@ requirements:
     - perl-test-most
     - perl-json
     - perl-file-slurp
-  build:
+  run:
     - perl-threaded
     - perl-moose
     - perl-json
