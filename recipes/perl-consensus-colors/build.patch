@@ -1,0 +1,47 @@
+diff --git a/Makefile.PL b/Makefile.PL
+new file mode 100644
+index 0000000..8e6350d
+--- /dev/null
++++ b/Makefile.PL
+@@ -0,0 +1,22 @@
++use strict;
++use warnings;
++use ExtUtils::MakeMaker;
++use Cwd;
++
++WriteMakefile(
++    NAME                => 'Consensus::Colors',
++    AUTHOR              => q{Jody Clements <clementsj@janelia.hhmi.org>},
++    VERSION_FROM        => 'lib/Consensus/Colors.pm',
++    ABSTRACT_FROM       => 'lib/Consensus/Colors.pm',
++    ($ExtUtils::MakeMaker::VERSION >= 6.3002
++      ? ('LICENSE'=> 'perl')
++      : ()),
++    PL_FILES            => {},
++    PREREQ_PM => {
++        'Moose'              => 0,
++    },
++    CONFIGURE_REQUIRES  =>  {
++      'ExtUtils::MakeMaker'   => 6.52,
++    },
++    dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
++);
+diff --git a/lib/Consensus/Colors.pm b/lib/Consensus/Colors.pm
+index 3473b4d..250d5e7 100644
+--- a/lib/Consensus/Colors.pm
++++ b/lib/Consensus/Colors.pm
+@@ -3,6 +3,14 @@ use warnings;
+ package Consensus::Colors;
+ use Moose;
+ 
++=head1 VERSION
++
++Version 0.01
++
++=cut
++
++our $VERSION = '0.01';
++
+ # ABSTRACT: An abstract on what this package does
+ 
+ has probs_arr => (

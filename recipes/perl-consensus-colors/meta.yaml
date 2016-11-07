@@ -1,0 +1,33 @@
+package:
+  name: perl-consensus-colors
+  version: 0.001
+
+source:
+  fn: Consensus_Colors-0.001.tar.gz
+  url: https://github.com/Janelia-Farm-Xfam/Consensus-Colors/archive/ad7fea327d7d320007c06fbcc6585e919fccc995.tar.gz
+  # git_rev: ad7fea327d7d320007c06fbcc6585e919fccc995
+  # git_url: https://github.com/Janelia-Farm-Xfam/Consensus-Colors.git
+  patches:
+    - build.patch
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - perl-threaded
+    - perl-moose
+    - perl-test-most
+    - perl-json
+    - perl-file-slurp
+  build:
+    - perl-threaded
+    - perl-moose
+    - perl-json
+test:
+  imports:
+    - Conensus::Colors 
+about:
+  home: https://github.com/Janelia-Farm-Xfam/Consensus-Colors/
+  license: MIT
+  summary: Perl5 Consensus Colors library used by Bio::HMM::Logo 
