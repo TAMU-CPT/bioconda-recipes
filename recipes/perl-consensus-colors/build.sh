@@ -13,6 +13,7 @@ elif [ -f Makefile.PL ]; then
     make
     make test
     make install
+	find / -name 'Colors.pm'
 else
     echo 'Unable to find Build.PL or Makefile.PL. You need to modify build.sh.'
     exit 1
